@@ -31,6 +31,10 @@ const addTask = (): void => {
   setDeadline(Number(''))
 }
 
+const completeTask = (taskNameToDelete: String): void => {
+ setToDoList(todoList.filter(task => task.taskName != taskNameToDelete))
+}
+
   return (
     <div className="App">
       <h1>Κατάλογος Εργασιών</h1>
@@ -44,7 +48,7 @@ const addTask = (): void => {
       </div>
       <div className='todoList'>
         {todoList.map((task: ITask, key: number) => {
-          return <ToDoTask key={key} task={task}/>
+          return <ToDoTask key={key} task={task} completeTask={completeTask}/>
         } )}
       </div>
     </div>
