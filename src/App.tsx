@@ -1,7 +1,12 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './App.css';
 
 const App: FC = () => {
+
+  const [task, setTask] = useState('')
+  const [deadline, setDeadline] = useState(0)
+  const [todo, setToDoList] = useState([])
+
   return (
     <div className="App">
       <h1>Κατάλογος Εργασιών</h1>
