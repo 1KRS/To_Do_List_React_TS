@@ -1,11 +1,12 @@
 import React, { FC, ChangeEvent, useState } from 'react';
 import './App.css';
+import { ITask } from './interfaces';
 
 const App: FC = () => {
 
   const [task, setTask] = useState('')
   const [deadline, setDeadline] = useState(0)
-  const [todo, setToDoList] = useState([])
+  const [todoList, setToDoList] = useState<ITask[]>([])
 
 const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
   if (e.target.name === 'task') {
@@ -15,7 +16,14 @@ const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
   }
 };
 
-const addTask = 
+const addTask = (): void => {
+  const newTask = {
+    taskName: task,
+    deadline: deadline
+  }
+  setToDoList([...todoList, newTask])
+  console.log(todoList)
+}
 
   return (
     <div className="App">
@@ -26,7 +34,7 @@ const addTask =
           <input type='text' placeholder='Εργασία...' name='task' onChange={handleChange}/>
           <input type='text' placeholder='Προθεσμία (σε Ημέρες)...' name='deadline' onChange={handleChange}/>
         </div>
-        <button>Προσθήκη Εργασίας</button>
+        <button onClick={(addTask)}>Προσθήκη Εργασίας</button>
       </div>
       <div className='todoList'></div>
     </div>
