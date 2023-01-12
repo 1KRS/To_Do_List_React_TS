@@ -93,6 +93,11 @@ h6 {
   background-color: tomato;
 }
 
+.task .content .taskName {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
 .task button {
   flex: 20%;
   height: 100%;
