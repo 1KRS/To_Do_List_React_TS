@@ -41,8 +41,8 @@ const completeTask = (taskNameToDelete: String): void => {
       <h6>(React & Typescript)</h6>
       <div className='header'>
         <div className='inputContainer'>
-          <input type='text' placeholder='Εργασία...' name='task' value={task} onChange={handleChange}/>
-          <input type='text' placeholder='Προθεσμία (σε Ημέρες)...' value={deadline} name='deadline' onChange={handleChange}/>
+          <input className='taskName' type='text' placeholder='Εργασία...' name='task' value={task} onChange={handleChange}/>
+          <input className='deadline' type='text' placeholder='Προθεσμία (σε Ημέρες)...' value={deadline} name='deadline' onChange={handleChange}/>
         </div>
         <button onClick={(addTask)}>Προσθήκη Εργασίας</button>
       </div>

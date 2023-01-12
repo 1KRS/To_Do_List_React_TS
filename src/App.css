@@ -40,11 +40,17 @@ h6 {
   width: 200px;
   height: 40px;
   border: none;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
   padding-left: 10px;
   font-size: 17px;
   border: 1px solid grey;
+}
+
+.header .taskName {
+  border-top-left-radius: 8px;
+}
+
+.header .deadline {
+  border-bottom-left-radius: 8px;
 }
 
 .header button {
